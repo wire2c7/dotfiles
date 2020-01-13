@@ -1,0 +1,70 @@
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
+
+set fileformat=unix
+
+set nowritebackup
+set nobackup
+set noswapfile
+
+set belloff=all
+
+set number
+
+set title
+set showtabline=2
+set laststatus=2
+set ruler
+set showmode
+set showcmd
+set wildmenu
+
+set scrolloff=5
+
+set clipboard&
+set clipboard^=unnamedplus
+
+set list
+set listchars=tab:￫.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
+set wrap
+
+set nostartofline
+
+set hlsearch
+set ignorecase
+set smartcase
+set incsearch
+set wrapscan
+
+set expandtab
+set tabstop=4
+set softtabstop=2
+set smarttab
+set shiftwidth=2
+set autoindent
+set smartindent
+
+set backspace=indent,eol,start
+set matchpairs& matchpairs+=<:>
+set showmatch matchtime=3
+
+if !has('win32') && !has('win64')
+  set shell=/bin/bash
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-lsp-icons'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+
+call plug#end()
+
+call map(sort(split(globpath(&runtimepath, '_config/*.vim'))), {->[execute('exec "so" v:val')]})
+

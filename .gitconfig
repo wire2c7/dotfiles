@@ -1,0 +1,26 @@
+[user]
+	name = wire2c7
+	email = wire2c7@hrgn.dev
+[push]
+	default = current
+[core]
+	autocrlf = false
+	ignorecase = false
+	editor = vim
+	quotepath = false
+	excludesfile = ~/.gitignore_global
+[color]
+	ui = true
+[alias]
+	s = status
+	d = diff
+	c = commit
+	b = branch
+	ps = push
+	pl = pull
+	ck = checkout
+	a = add
+	sw = switch
+[filter "ignore-npmrc"]
+    smudge = cat
+    clean = sed '/^\\/\\/registry\\.npmjs\\.org\\/:_authToken/d'
