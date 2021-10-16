@@ -1,0 +1,10 @@
+[user]
+	name = wire2c7
+	email = wire2c7@hrgn.one
+[core]
+	quotepath = false
+	safecrlf = true
+	autocrlf = false
+	ignorecase = false
+[push]
+	default = current

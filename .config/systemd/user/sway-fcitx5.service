@@ -1,0 +1,11 @@
+[Unit]
+Description=Fcitx5 for sway session
+BindsTo=sway-session.target
+
+[Service]
+Type=simple
+ExecStart=/sbin/fcitx5
+
+[Install]
+WantedBy=sway-session.target
+

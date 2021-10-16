@@ -1,0 +1,55 @@
+#
+#  ~/.config/starship.toml
+# ------------------------------
+
+format = """
+[┌─](bold green) $directory$hostname $fill $status$line_break\
+[└>](bold green)$username$character"""
+
+add_newline = true
+
+[character]
+format = " $symbol  "
+success_symbol = "😉"
+error_symbol = "🤯"
+vicmd_symbol = "[](bold green) "
+
+[directory]
+format = "[ $path]($style)[$read_only]($read_only_style) "
+#style = "blue"
+read_only = "  "
+read_only_style = "yellow"
+home_symbol = "~"
+truncation_length = 3
+truncate_to_repo = true
+truncation_symbol = ".../"
+fish_style_pwd_dir_length = 0
+
+[fill]
+symbol = " "
+#style = ""
+
+[hostname]
+ssh_only = true
+#style = ""
+format = "on [ $hostname]($style)"
+
+[shell]
+fish_indicator = " "
+unknown_indicator = "?"
+format = "$indicator"
+disabled = false
+
+[status]
+format = "[$symbol $status $common_meaning$signal_name$maybe_int]($style) "
+#symbol = ""
+#success_symbol = ""
+style = "bold red"
+disabled = false
+
+[username]
+style_root = "bold red"
+style_user = "bold yellow"
+format = "[ $user]($style)"
+show_always = false
+

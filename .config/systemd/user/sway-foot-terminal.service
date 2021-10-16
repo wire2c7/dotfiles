@@ -1,0 +1,11 @@
+[Unit]
+Description=foot terminal emulator server mode for sway session
+BindsTo=sway-session.target
+
+[Service]
+Type=simple
+ExecStart=/sbin/foot --server
+Restart=Always
+
+[Install]
+WantedBy=sway-session.target

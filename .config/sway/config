@@ -1,0 +1,26 @@
+#
+# Sway Configration
+#
+
+### Basic Variables
+
+set $mod Mod4
+
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Terminal
+set $term footclient
+
+# Application Launcher
+set $app_launcher wofi --show drun -i
+set $menu dmenu_path | $app_launcher | xargs swaymsg exec --
+
+# Include Configration
+include /etc/sway/config.d/*
+include conf.d/*
+
+exec_always "systemctl --user import-environment; systemctl --user start sway-session.target"
+
